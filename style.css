@@ -1,0 +1,453 @@
+* {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ### Primary Colors*/
+    --strongCyan: hsl(171, 66%, 44%);
+    --lightBlue: hsl(233, 100%, 69%);
+
+    /* ### Neutral Colors*/
+    --darkGrayishBlue: hsl(210, 10%, 33%);
+    --grayishBlue: hsl(201, 11%, 66%);
+    --footerGray: #F5F6F8;
+}
+
+body {
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Header */
+
+header {
+    position: relative;
+}
+
+.bg-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* Buttons */
+
+.btn-green {
+    background-color: var(--strongCyan)
+}
+
+.btn-blue {
+    background-color: var(--lightBlue)
+}
+
+button {
+    border: none;
+    color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0px 15px 12px 0px rgba(50, 50, 50, 0.15);
+    transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Other */
+
+footer {
+    background-color: var(--footerGray);
+    position: relative;
+    display: grid;
+}
+
+.flex {
+    display: flex
+}
+
+#attribution {
+    font-size: 11px;
+    text-align: center !important;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%
+}
+
+a {
+    color: var(--lightBlue) !important;
+    font-size: inherit;
+}
+
+/* Active States */
+
+.btn-green:hover {
+    box-shadow: 0px 15px 12px 0px rgba(2, 250, 2, 0.15);;
+}
+.btn-blue:hover {
+    box-shadow: 0px 15px 12px 0px rgba(3, 182, 253, 0.15);;
+}
+footer p:hover,
+footer i:hover {
+    color: var(--strongCyan);
+}
+footer p,
+footer i {
+    transition: all .3s;
+}
+
+/* Phones */
+
+@media (min-width: 375px) {
+
+    /* Remove Desktop Content-- Display Mobile Content */
+
+    .desktop {
+        display: none
+    }
+
+    .mobile {
+        display: block
+    }
+
+    /* All Flex Containers are Columns in Mobile View */
+
+    *.flex {
+        flex-direction: column;
+    }
+
+    /* General Selectors */
+
+    h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    p {
+        color: var(--grayishBlue);
+        line-height: 2;
+        font-size: 1.2rem;
+    }
+
+    section,
+    .download {
+        padding: 0 2.5rem;
+        margin-bottom: 8rem;
+    }
+
+    #standalone-img {
+        padding: 0;
+        margin-bottom: 8rem;
+    }
+
+    /* Download */
+
+    section > .download {
+        /* Second Download section is in a section */
+        margin: 0;
+    }
+
+    .download p {
+        margin: 2rem 0
+    }
+
+    .download img {
+        margin: 7rem 0 4rem 0
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    /* Info-text Sections */
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .info-text {
+        margin-bottom: 4rem;
+    }
+
+    /* Features */
+
+    .feature-text {
+        margin: 2.5rem 0
+    }
+
+    .feature-text:last-of-type {
+        margin-bottom: 0
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+
+    /* Logos, Supercharge Imgs */
+
+    #logos {
+        align-items: center
+    }
+
+    #logos img,
+    #supercharge img {
+        margin: 2.5rem 0
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 2.5rem 0
+    }
+
+    footer img {
+        transform: scale(.5);
+        margin: auto;
+    }
+
+    #social-icons {
+        margin: 3rem 0 2rem 0;
+    }
+
+    footer i {
+        transform: scale(2);
+        padding: 0 2rem;
+        color: var(--darkGrayishBlue)
+    }
+
+    footer p {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tablets */
+
+@media (min-width: 1024px) {
+
+    /* Sizing */
+
+    section,
+    .download {
+        padding: 4rem;
+        margin-bottom: 6rem;
+    }
+
+    /* Font-Sizes */
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    /* Header */
+
+    .btns {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        width: 30%;
+        margin: 0 1rem;
+    }
+
+    /* Footer */
+
+    footer {
+        text-align: left;
+        padding: 1.5rem 4rem;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+        grid-template-areas: 
+        ". . . . ."
+        "attr attr attr attr attr";
+        align-items: center;
+    }
+    #attribution {
+        grid-area: attr;
+    }
+
+    /* Removes uneeded margin from the second p in the footer text divs */
+    .footer-text p:last-of-type {
+        margin: 0;
+    }
+
+    /* Aligns the Install Guide Text */
+    .desktop.align-footer-text {
+        display: block
+    }
+
+    #social-icons {
+        justify-self: end;
+    }
+}
+
+@media (min-width: 1360px) {
+
+    /* Remove Mobile Content */
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    /* Sizing */
+
+    header {
+        margin-bottom: 12rem;
+    }
+
+    section,
+    .download {
+        padding: 0 8rem;
+        margin-bottom: 6rem;
+    }
+
+    .download p,
+    .info-text p {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Info Text */
+
+    .info-text {
+        width: 80%;
+        margin: 4rem auto;
+    }
+
+    /* Features */
+
+    #features {
+        position: relative;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    #features img {
+        min-width: 50%;
+        position: relative;
+        left: -5%;
+    }
+
+    #features .feature-text {
+        text-align: left;
+        width: 70%;
+    }
+
+    /* Supercharge */
+
+    #supercharge {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #supercharge img {
+        height: 2rem;
+    }
+
+    #supercharge .feature-text {
+        max-width: 30%;
+    }
+
+    /* Logos */
+
+    #logos {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Download */
+
+    section > .download {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    /* Footer */
+
+    footer p {
+        font-size: 1.5rem;
+    }
+}
+
+/* Extra Large */
+
+@media (min-width: 1900px) {
+
+    /* Sizes */
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.75rem;
+    }
+
+    /* Header */
+    button {
+        width: 20%;
+    }
+
+    /* Features */
+    #features {
+        min-height: 45rem;
+    }
+
+    #features img {
+        min-width: 50%;
+    }
+
+    .feature-text {
+        margin: 4rem 0;
+    }
+
+    /* Supercharge */
+    #supercharge img {
+        height: 3rem;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 2rem;
+    }
+}
