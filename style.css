@@ -53,10 +53,10 @@ button {
 }
 
 /* Other */
-
 footer {
     background-color: var(--footerGray);
-    position: relative;
+}
+.footer-grid {
     display: grid;
 }
 
@@ -279,31 +279,45 @@ footer i {
     }
 
     /* Footer */
-
-    footer {
+   
+    .footer-grid {
         text-align: left;
-        padding: 1.5rem 4rem;
-        grid-template-rows: 1fr auto;
+        padding: 0 4rem;
+        grid-template-rows: auto auto auto;
         grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
         grid-template-areas: 
-        ". . . . ."
-        "attr attr attr attr attr";
+        "logo   faqs    privacy     install     social"
+        "logo   contact press          .        social"
+        "attr   attr    attr        attr        attr";
         align-items: center;
+    }
+    footer img {
+        grid-area: logo;
+    }
+    footer p:first-of-type {
+        grid-area: faqs
+    }
+    footer p:nth-of-type(2) {
+        grid-area: privacy;
+    }
+    footer p:nth-of-type(3) {
+        grid-area: install;
+    }
+    footer p:nth-of-type(4) {
+        grid-area: contact;
+    }
+    footer p:nth-of-type(5) {
+        grid-area: press;
     }
     #attribution {
         grid-area: attr;
     }
 
     /* Removes uneeded margin from the second p in the footer text divs */
+    
     .footer-text p:last-of-type {
         margin: 0;
     }
-
-    /* Aligns the Install Guide Text */
-    .desktop.align-footer-text {
-        display: block
-    }
-
     #social-icons {
         justify-self: end;
     }
